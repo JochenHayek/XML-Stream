@@ -76,6 +76,17 @@ sub new
 
     my %args;
     while($#_ >= 0) { $args{ lc pop(@_) } = pop(@_); }
+    while($#_ >= 0) 
+      {
+        if($#_ == 0)
+	        {
+	          pop(@_);
+	        }
+	      else
+	        {
+	          $args{ lc pop(@_) } = pop(@_);
+	        }
+        }
 
     $self->{PARSING} = 0;
     $self->{DOC} = 0;
